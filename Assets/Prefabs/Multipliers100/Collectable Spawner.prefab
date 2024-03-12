@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5140781728426828870
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1150026739153449402}
+  - component: {fileID: 2274879540665739331}
+  m_Layer: 8
+  m_Name: Collectable Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1150026739153449402
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5140781728426828870}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.098676674, y: 0, z: -95.98104}
+  m_LocalScale: {x: 0.8499999, y: 0.9406249, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2274879540665739331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5140781728426828870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 639fe150ea94bd14298ade43d822da98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collectablePrefabs:
+  - {fileID: 3234287802311132862, guid: 2f4a827da0f6ba44c895b8796e26f018, type: 3}
+  - {fileID: 1419652707705805977, guid: 89384041cd2bdfc4caa4e6ab72e7ce28, type: 3}
+  - {fileID: 3555899852491992635, guid: d007d1cb78d5ee84c84b8bd026066c1b, type: 3}
+  - {fileID: 6146162542722618828, guid: a35456ee53d31854ca3c5f91cabfddbd, type: 3}
+  - {fileID: 7221565300532925411, guid: 16476fae25d444140a932bc2bd28e9db, type: 3}
+  multiplierPrefabs:
+  - {fileID: 4146448630025239488, guid: ec954131f7dffc7449b22ba968a2ba3b, type: 3}
+  - {fileID: 1531475448571962470, guid: 3a6a2f6c18ebc7c468e2d5eff6f5c90c, type: 3}
+  - {fileID: 2907439846628448446, guid: 9176c1ebbfbae5241bd07cd37613df5f, type: 3}
+  - {fileID: 6983694174796530148, guid: a36c084c0a3bfbe4b9be40fa0f12ee9a, type: 3}
+  - {fileID: 4055025767114300254, guid: 7eaf748bafd39f147a2d2f15b989317e, type: 3}
+  collectableSpawnInterval: 5
+  multiplierSpawnInterval: 5.5
+  spawnRadius: 0.85
+  disappearDelay: 5
+  spawnPanel: {fileID: 0}
+  scaleFactor: 2

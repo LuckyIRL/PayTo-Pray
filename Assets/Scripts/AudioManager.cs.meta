@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: bbbe0cccda6a70f4b97ba5ae543b41d9
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - musicSource: {instanceID: 0}
+  - SFXSource: {instanceID: 0}
+  - background: {instanceID: 0}
+  - Upgrade_1: {fileID: 8300000, guid: 38f4d8b3b80b64149b321fd159dbb2fc, type: 3}
+  - Upgrade_2: {fileID: 8300000, guid: 772af70d74cdd484ca70414454edd0d0, type: 3}
+  - Upgrade_3: {fileID: 8300000, guid: 7d006ced270640c4bbdc3012cb233329, type: 3}
+  - Upgrade_4: {fileID: 8300000, guid: a214c8592ad64be4ab67858fafa0448c, type: 3}
+  - Upgrade_5: {fileID: 8300000, guid: 9d6a0151e299c7341a690adebbc6575e, type: 3}
+  - Upgrade_6: {instanceID: 0}
+  - Upgrade_7: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
