@@ -14,14 +14,21 @@ public class ResourceTracker : MonoBehaviour
     // Variables for collectable
     private bool cpsReductionCollectableActive = false;
     private float cpsReductionCollectableTimer = 0f;
-    public float cpsReductionCollectableActiveTime = 5f; // Time the CPS reduction collectable remains active
-    public float cpsReductionPercentage = 0.5f; // Percentage by which CPS will be reduced if not clicked in time
+    private float cpsReductionCollectableActiveTime = 5f; // Time the CPS reduction collectable remains active
+    private float cpsReductionPercentage = 0.5f; // Percentage by which CPS will be reduced if not clicked in time
 
     // Variables for multiplier
     private bool multiplierActive = false;
     private float multiplierValue = 1f;
     private float multiplierDuration = 0f;
     private float multiplierTimer = 0f;
+
+    // Variables for prayBoost
+    private bool prayBoostActive = false;
+    private float prayBoostMultiplier = 1f;
+    private float prayBoostDuration = 0f;
+    private float prayBoostTimer = 0f;
+
 
     private void Awake()
     {
@@ -38,9 +45,13 @@ public class ResourceTracker : MonoBehaviour
         autoClicks *= (1f - reductionPercentage); // Reduce autoClicks by the specified percentage
     }
 
-    // Method to add resources to the available pool
     public void AddResources(int amountToAdd)
     {
+        if (prayBoostActive)
+        {
+            // Apply the pray boost multiplier
+            amountToAdd = Mathf.RoundToInt(amountToAdd * prayBoostMultiplier);
+        }
         resourcesAvailable += amountToAdd;
     }
 
@@ -59,8 +70,8 @@ public class ResourceTracker : MonoBehaviour
     // Method to update the UI
     private void UpdateUI()
     {
-        resourceCounter.text = resourcesAvailable.ToString() + " Prayers";
-        clickCounter.text = "per sec: " + (Mathf.Round(autoClicks * 10) / 10).ToString();
+        resourceCounter.text = resourcesAvailable.ToString();
+        clickCounter.text = (Mathf.Round(autoClicks * 10) / 10).ToString();
     }
 
     // Method to activate CPS reduction collectable
@@ -77,6 +88,14 @@ public class ResourceTracker : MonoBehaviour
         multiplierValue = value;
         multiplierTimer = 0f;
         autoClicks *= multiplierValue; // Apply multiplier to autoClicks
+    }
+
+    public void ActivatePrayBoost(float duration, float multiplier)
+    {
+        prayBoostActive = true;
+        prayBoostDuration = duration;
+        prayBoostMultiplier = multiplier;
+        prayBoostTimer = 0f;
     }
 
     private void Update()
@@ -111,6 +130,19 @@ public class ResourceTracker : MonoBehaviour
 
             // Set the autoClick pool to be the fractional remainder
             autoClickPool = fractionalRemainder;
+        }
+
+        if (prayBoostActive)
+        {
+            prayBoostTimer += Time.deltaTime;
+            if (prayBoostTimer >= prayBoostDuration)
+            {
+                prayBoostActive = false;
+            }
+            else
+            {
+                currentAutoClicks *= prayBoostMultiplier;
+            }
         }
 
         // Update the UI

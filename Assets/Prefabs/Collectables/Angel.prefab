@@ -137,6 +137,12 @@ MonoBehaviour:
   type: 0
   resourceAmount: 250
   collectableClipIndex: 1
+  cpsReductionPercentage: 0
+  prayBoostMultiplier: 0
+  prayBoostDuration: 0
+  resourceMultiplierValue: 0
+  multiplierDuration: 0
+  multiplierValue: 0
 --- !u!114 &-2700799838581947900
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -153,6 +159,6 @@ MonoBehaviour:
   bobHeight: 0.89
   moveSpeed: 1
   moveRange: 1.46
-  rotationSpeed: 16.3
+  rotationSpeed: 10.7
   rotationRange: 13
   scaleFactor: 1

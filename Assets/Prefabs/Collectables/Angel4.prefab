@@ -137,6 +137,12 @@ MonoBehaviour:
   type: 0
   resourceAmount: 1800
   collectableClipIndex: 4
+  cpsReductionPercentage: 0
+  prayBoostMultiplier: 0
+  prayBoostDuration: 0
+  resourceMultiplierValue: 0
+  multiplierDuration: 0
+  multiplierValue: 0
 --- !u!114 &-3075104085594262685
 MonoBehaviour:
   m_ObjectHideFlags: 0

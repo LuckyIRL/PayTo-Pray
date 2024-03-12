@@ -155,6 +155,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 3
   resourceAmount: 0
-  collectableClipIndex: 0
+  collectableClipIndex: 7
   cpsReductionPercentage: 0.5
-  clickWindowDuration: 5
+  prayBoostMultiplier: 0
+  prayBoostDuration: 0
+  resourceMultiplierValue: 0
+  multiplierDuration: 0
+  multiplierValue: 0

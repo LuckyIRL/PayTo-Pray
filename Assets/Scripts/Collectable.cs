@@ -8,7 +8,8 @@ public class Collectable : MonoBehaviour
         Bell,
         PowerUp,
         CPSReduction,
-        Multiplier // Add Multiplier collectable type
+        Multiplier,
+        PrayBoost// Add Multiplier collectable type
         // Add more collectable types as needed
     }
 
@@ -16,6 +17,10 @@ public class Collectable : MonoBehaviour
     public int resourceAmount = 10; // Amount of resources to award when collected
     public int collectableClipIndex; // Index of the collectable audio clip
     public float cpsReductionPercentage = 0.5f; // Percentage by which CPS will be reduced if not clicked in time
+    public float prayBoostMultiplier = 0.5f; // Prayerboost increase
+    public float prayBoostDuration = 10f;
+    // Add this variable at the beginning of the Collectable script
+    public float resourceMultiplierValue = 2f; // Multiplier value for resource amount
     public float multiplierDuration = 10f; // Duration of the multiplier effect
     public float multiplierValue = 1.5f; // Value of the multiplier (e.g., 1.5 for a 50% increase)
     private AudioManager audioManager; // Reference to the AudioManager
@@ -54,6 +59,10 @@ public class Collectable : MonoBehaviour
             case CollectableType.Multiplier:
                 // Activate multiplier
                 ResourceTracker.Instance.ActivateMultiplier(multiplierDuration, multiplierValue);
+                break;
+            case CollectableType.PrayBoost:
+                // Apply resource multiplier effect to resourceAmount
+                FindObjectOfType<ResourceTracker>().ActivatePrayBoost(prayBoostDuration, prayBoostMultiplier);
                 break;
                 // Add more cases for additional collectable types
         }
