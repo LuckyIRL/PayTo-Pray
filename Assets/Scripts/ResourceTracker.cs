@@ -29,6 +29,12 @@ public class ResourceTracker : MonoBehaviour
     private float prayBoostDuration = 0f;
     private float prayBoostTimer = 0f;
 
+    // Penalty collectable variables
+    private float penaltyPercentage = 0.5f; // Percentage by which resources will be penalized if not clicked
+    private bool penaltyActive = false; // Flag to track if a penalty collectable is active
+    private float penaltyTimer = 0f; // Timer for active penalty collectable
+    private float penaltyDuration = 5f; // Duration for which the penalty collectable remains active
+
 
     private void Awake()
     {
@@ -98,6 +104,12 @@ public class ResourceTracker : MonoBehaviour
         prayBoostTimer = 0f;
     }
 
+    // Method to activate penalty collectable
+    public void ActivatePenaltyCollectable()
+    {
+        penaltyActive = true;
+    }
+
     private void Update()
     {
         // Update autoClicks based on CPS reduction collectable status and multiplier status
@@ -162,5 +174,30 @@ public class ResourceTracker : MonoBehaviour
                 cpsReductionCollectableTimer = 0f;
             }
         }
+
+        // Check if penalty collectable is active
+        if (penaltyActive)
+        {
+            penaltyTimer += Time.deltaTime;
+
+            // Check if time limit exceeded
+            if (penaltyTimer >= penaltyDuration)
+            {
+                // Apply the penalty
+                ApplyResourcePenalty(penaltyPercentage);
+
+                // Deactivate penalty collectable
+                penaltyActive = false;
+                penaltyTimer = 0f;
+            }
+        }
+    }
+
+    // Method to apply the resource penalty
+    private void ApplyResourcePenalty(float percentage)
+    {
+        int penaltyAmount = Mathf.RoundToInt(resourcesAvailable * percentage);
+        resourcesAvailable -= penaltyAmount;
     }
 }
+

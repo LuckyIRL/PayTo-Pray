@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public class Collectable : MonoBehaviour
@@ -9,7 +10,8 @@ public class Collectable : MonoBehaviour
         PowerUp,
         CPSReduction,
         Multiplier,
-        PrayBoost// Add Multiplier collectable type
+        PrayBoost,
+        Penalty // Add Penalty collectable type
         // Add more collectable types as needed
     }
 
@@ -19,10 +21,11 @@ public class Collectable : MonoBehaviour
     public float cpsReductionPercentage = 0.5f; // Percentage by which CPS will be reduced if not clicked in time
     public float prayBoostMultiplier = 0.5f; // Prayerboost increase
     public float prayBoostDuration = 10f;
-    // Add this variable at the beginning of the Collectable script
     public float resourceMultiplierValue = 2f; // Multiplier value for resource amount
     public float multiplierDuration = 10f; // Duration of the multiplier effect
     public float multiplierValue = 1.5f; // Value of the multiplier (e.g., 1.5 for a 50% increase)
+    public float penaltyPercentage = 0.5f; // Percentage of resources to be penalized if not clicked in time
+    public float penaltyDuration = 5f; // Duration for which the penalty collectable remains active
     private AudioManager audioManager; // Reference to the AudioManager
 
     private bool clicked = false; // Flag to track if collectable was clicked
@@ -31,6 +34,9 @@ public class Collectable : MonoBehaviour
     {
         // Find the AudioManager in the scene
         audioManager = FindObjectOfType<AudioManager>();
+
+        // Play collectable audio clip when it appears
+        audioManager.PlayCollectableClip(collectableClipIndex); // Adjust the audio clip index as needed
     }
 
     private void OnMouseDown()
@@ -64,6 +70,9 @@ public class Collectable : MonoBehaviour
                 // Apply resource multiplier effect to resourceAmount
                 FindObjectOfType<ResourceTracker>().ActivatePrayBoost(prayBoostDuration, prayBoostMultiplier);
                 break;
+            case CollectableType.Penalty:
+                // No action needed when clicked
+                break;
                 // Add more cases for additional collectable types
         }
 
@@ -73,11 +82,11 @@ public class Collectable : MonoBehaviour
 
     private void OnDestroy()
     {
-        // If the collectible hasn't been clicked
-        if (!clicked && type == CollectableType.CPSReduction)
+        // If the collectible hasn't been clicked and it's a penalty collectable
+        if (!clicked && type == CollectableType.Penalty)
         {
-            // Apply the CPS reduction
-            ResourceTracker.Instance.ApplyCPSReduction(cpsReductionPercentage);
+            // Activate the penalty effect after the collectable disappears
+            ResourceTracker.Instance.ActivatePenaltyCollectable();
         }
     }
 }
