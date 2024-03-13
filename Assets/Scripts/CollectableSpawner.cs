@@ -16,8 +16,8 @@ public class CollectableSpawner : MonoBehaviour
     public float spawnRadius = 5f; // Radius within which collectables will spawn
     public float disappearDelay = 5f; // Time delay before collectables disappear if not clicked
     public float initialDelay = 10f; // Initial delay before collectables start spawning
-    public int collectableAppearClipIndex;
-    public int penaltyAppearClipsIndex;
+    //public int collectableAppearClipIndex;
+    //public int penaltyAppearClipsIndex;
     private AudioManager audioManager; // Reference to the AudioManager
 
 

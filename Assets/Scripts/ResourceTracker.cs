@@ -1,6 +1,8 @@
 using TMPro;
 using UnityEngine;
 using System.Collections;
+using static Unity.IO.LowLevel.Unsafe.AsyncReadManagerMetrics;
+using System;
 
 public class ResourceTracker : MonoBehaviour
 {
@@ -31,9 +33,10 @@ public class ResourceTracker : MonoBehaviour
     private float prayBoostTimer = 0f;
 
     // Penalty collectable variables
-    private float penaltyPercentage = 0.5f; // Percentage by which resources will be penalized if not clicked
+    private float penaltyAmount = 0.5f; // Percentage by which resources will be penalized if not clicked
     private bool penaltyActive = false; // Flag to track if a penalty collectable is active
     private bool penaltyCollectableSpawned = false; // Flag to track if a penalty collectable has spawned but not clicked
+    private bool penaltyClicked = false; // Flag to track if the penalty collectable has been clicked
     private float penaltyTimer = 0f; // Timer for active penalty collectable
     private float penaltyDuration = 5f; // Duration for which the penalty collectable remains active
 
@@ -88,6 +91,7 @@ public class ResourceTracker : MonoBehaviour
         cpsReductionCollectableActive = true;
     }
 
+
     // Method to activate multiplier
     public void ActivateMultiplier(float duration, float value)
     {
@@ -106,26 +110,44 @@ public class ResourceTracker : MonoBehaviour
         prayBoostTimer = 0f;
     }
 
+    // Method to activate penalty collectable
     public void ActivatePenaltyCollectable()
     {
         StartCoroutine(PenaltyCollectableRoutine());
         penaltyCollectableSpawned = true; // Mark that a penalty collectable has spawned
+        penaltyActive = true; // Mark that a penalty collectable is active
     }
 
+    private float GetPenaltyAmount()
+    {
+        return penaltyAmount;
+    }
+
+
+    // Method to apply the penalty
+    public void ApplyResourcePenalty()
+    {
+        // Check if the penalty collectable was clicked
+        if (!penaltyClicked)
+        {
+            // If not clicked, deduct the penalty from resources
+            int penaltyAmountToDeduct = Mathf.RoundToInt(resourcesAvailable * penaltyAmount);
+            RemoveResources(penaltyAmountToDeduct);
+        }
+    }
 
 
     // Coroutine for penalty collectable behavior
     private IEnumerator PenaltyCollectableRoutine()
     {
-        
         // Wait for the collectable to disappear if it's not clicked
         yield return new WaitForSeconds(penaltyDuration);
 
         // Check if the collectable is still active and not clicked
-        if (penaltyActive)
+        if (penaltyActive && !penaltyClicked)
         {
             // Apply the penalty
-            ApplyResourcePenalty(penaltyPercentage);
+            ApplyResourcePenalty(); // Update this line
 
             // Deactivate penalty collectable
             penaltyActive = false;
@@ -133,12 +155,6 @@ public class ResourceTracker : MonoBehaviour
         }
     }
 
-    // Method to apply the resource penalty
-    private void ApplyResourcePenalty(float penaltyPercentage)
-    {
-        int penaltyAmount = Mathf.RoundToInt(resourcesAvailable / penaltyPercentage);
-        resourcesAvailable -= penaltyAmount;
-    }
 
 
     private void Update()
@@ -214,7 +230,7 @@ public class ResourceTracker : MonoBehaviour
             if (penaltyTimer >= penaltyDuration)
             {
                 // Apply the penalty
-                ApplyResourcePenalty(penaltyPercentage);
+                ApplyResourcePenalty();
 
                 // Deactivate penalty collectable
                 penaltyActive = false;

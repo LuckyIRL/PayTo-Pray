@@ -78,7 +78,6 @@ public class Collectable : MonoBehaviour
                 break;
             case CollectableType.Penalty:
                 // Halve resource amount
-                resourceAmount /= 2;
                 break;
                 // Add more cases for additional collectable types
         }
@@ -97,10 +96,12 @@ public class Collectable : MonoBehaviour
                     ResourceTracker.Instance.ApplyCPSReduction(cpsReductionPercentage);
                     break;
                 case CollectableType.Penalty:
-                    // Do nothing here, just set the flag
+                    ResourceTracker.Instance.ApplyResourcePenalty(); // Update this line
                     break;
             }
         }
     }
 
 }
+
+

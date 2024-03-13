@@ -162,5 +162,4 @@ MonoBehaviour:
   resourceMultiplierValue: 0
   multiplierDuration: 0
   multiplierValue: 0
-  penaltyPercentage: 0.5
-  penaltyDuration: 5
+  playOnAppearance: 0

@@ -9372,15 +9372,15 @@ PrefabInstance:
     - target: {fileID: 2332132330636125085, guid: 18c22dac3ada74b41bac6d3bd4b2861b, type: 3}
       propertyPath: penaltyAppearClips.Array.data[0]
       value: 
-      objectReference: {fileID: 8300000, guid: 8c60371ab59cdea4ebaf2ba878ff3e2d, type: 3}
+      objectReference: {fileID: 8300000, guid: 3a5feb16beec64c44ac59babc4b105ab, type: 3}
     - target: {fileID: 2332132330636125085, guid: 18c22dac3ada74b41bac6d3bd4b2861b, type: 3}
       propertyPath: penaltyAppearClips.Array.data[1]
       value: 
-      objectReference: {fileID: 8300000, guid: c4f8df6e79531384daf7829e58bbe42f, type: 3}
+      objectReference: {fileID: 8300000, guid: 5e5b5eb1c7b34c04e9c9518bb9f9fd37, type: 3}
     - target: {fileID: 2332132330636125085, guid: 18c22dac3ada74b41bac6d3bd4b2861b, type: 3}
       propertyPath: penaltyAppearClips.Array.data[2]
       value: 
-      objectReference: {fileID: 8300000, guid: 04f46bea0e3579b4d9c752b8081a1e09, type: 3}
+      objectReference: {fileID: 8300000, guid: 646ee493d01852f4fa71ffd981caef05, type: 3}
     - target: {fileID: 2332132330636125085, guid: 18c22dac3ada74b41bac6d3bd4b2861b, type: 3}
       propertyPath: collectableAppearClips.Array.size
       value: 3
