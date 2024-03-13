@@ -53,14 +53,17 @@ public class Collectable : MonoBehaviour
             audioManager.PlayCollectableClip(collectableClipIndex);
         }
 
-        // Handle different types of collectables
         switch (type)
         {
             case CollectableType.Angel:
-                FindObjectOfType<ResourceTracker>().AddResources(resourceAmount);
+                // Increase resource amount gradually as the game progresses
+                int scaledResourceAmount = Mathf.RoundToInt(resourceAmount * ResourceTracker.Instance.resourceCollectableScalingFactor);
+                FindObjectOfType<ResourceTracker>().AddResources(scaledResourceAmount);
                 break;
             case CollectableType.Bell:
-                FindObjectOfType<ResourceTracker>().AddResources(resourceAmount * 2); // Example: Gems award double resources
+                // Example: Gems award double resources
+                int doubledResourceAmount = resourceAmount * 2;
+                FindObjectOfType<ResourceTracker>().AddResources(doubledResourceAmount);
                 break;
             case CollectableType.PowerUp:
                 // Implement power-up functionality
@@ -78,6 +81,8 @@ public class Collectable : MonoBehaviour
                 break;
             case CollectableType.Penalty:
                 // Halve resource amount
+                int halvedResourceAmount = Mathf.RoundToInt(resourceAmount / 2);
+                FindObjectOfType<ResourceTracker>().AddResources(halvedResourceAmount);
                 break;
                 // Add more cases for additional collectable types
         }

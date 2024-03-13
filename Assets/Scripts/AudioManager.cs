@@ -64,6 +64,26 @@ public class AudioManager : MonoBehaviour
             Debug.LogWarning("Invalid background music index.");
         }
     }
+    // Method to play a random background music clip from the specified array
+    private void PlayRandomBackgroundMusic(AudioClip[] clips)
+    {
+        if (clips.Length > 0)
+        {
+            int randomIndex = Random.Range(0, clips.Length);
+            musicSource.clip = clips[randomIndex];
+            musicSource.Play();
+        }
+        else
+        {
+            Debug.LogWarning("No background music clips assigned.");
+        }
+    }
+
+    // Method to play a random background music clip
+    public void PlayRandomBackgroundMusic()
+    {
+        PlayRandomBackgroundMusic(backgroundMusicClips);
+    }
 
     // Coroutine to switch to the next background music clip after the current one finishes
     private IEnumerator PlayNextBackgroundMusic()

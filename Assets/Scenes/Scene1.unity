@@ -516,7 +516,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 110.72634, y: -122.019356}
+  m_AnchoredPosition: {x: 110.70132, y: -273.69574}
   m_SizeDelta: {x: 209.6924, y: 66.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &64979946
@@ -539,7 +539,7 @@ MonoBehaviour:
   nameText: {fileID: 1806171667}
   numberText: {fileID: 1718314300}
   myResources: {fileID: 1880980518}
-  autoClickIncrease: 50
+  autoClickIncrease: 1
   audioManager: {fileID: 1352680740}
   upgradeClipIndex: 1
   spritePrefab: {fileID: 2626801588595717805, guid: 60f8af340321dcd4d861d2ecceef8f6d, type: 3}
@@ -1374,7 +1374,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.7421875, y: -5.7677917}
+  m_AnchoredPosition: {x: 0.7421875, y: -5.7678223}
   m_SizeDelta: {x: -33.2845, y: -28.6187}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &143588736
@@ -1758,7 +1758,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 110.72634, y: -197.78871}
+  m_AnchoredPosition: {x: 110.70132, y: -349.51102}
   m_SizeDelta: {x: 209.6924, y: 66.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &236392532
@@ -1775,13 +1775,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Sunday Mass
   numberOwned: 0
-  baseCost: 200000
+  baseCost: 100000
   purchaseCost: 0
   costText: {fileID: 203291480}
   nameText: {fileID: 2039623884}
   numberText: {fileID: 1545323110}
   myResources: {fileID: 1880980518}
-  autoClickIncrease: 250
+  autoClickIncrease: 10
   audioManager: {fileID: 1352680740}
   upgradeClipIndex: 2
   spritePrefab: {fileID: 7518403909741894455, guid: 490e29cef86ebf242bd886054175f261, type: 3}
@@ -1909,13 +1909,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Miracle
   numberOwned: 0
-  baseCost: 1000000
+  baseCost: 10000000
   purchaseCost: 0
   costText: {fileID: 119809541}
   nameText: {fileID: 65356412}
   numberText: {fileID: 1012229689}
   myResources: {fileID: 1880980518}
-  autoClickIncrease: 1500
+  autoClickIncrease: 100
   audioManager: {fileID: 1352680740}
   upgradeClipIndex: 5
   spritePrefab: {fileID: 5567249725549815665, guid: 7f881c4f92fb35e49a7cdc9c1c6060c8, type: 3}
@@ -2309,6 +2309,7 @@ RectTransform:
   - {fileID: 1871375041}
   - {fileID: 1888642231}
   - {fileID: 121540255}
+  - {fileID: 1501317754}
   m_Father: {fileID: 845145427}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -3906,6 +3907,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 956889835}
   m_CullTransparentMesh: 1
+--- !u!1 &993152654
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 993152655}
+  m_Layer: 0
+  m_Name: 1000000500
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &993152655
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 993152654}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 544.7926, y: 360.6698, z: -95.69734}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1001721884
 GameObject:
   m_ObjectHideFlags: 0
@@ -5173,7 +5205,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 110.72634, y: -273.55807}
+  m_AnchoredPosition: {x: 110.70132, y: -387.41867}
   m_SizeDelta: {x: 209.6924, y: 66.5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1337790081
@@ -5190,13 +5222,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Pope's Blessing
   numberOwned: 0
-  baseCost: 500000
+  baseCost: 5000000
   purchaseCost: 0
   costText: {fileID: 832333062}
   nameText: {fileID: 1001721886}
   numberText: {fileID: 956889837}
   myResources: {fileID: 1880980518}
-  autoClickIncrease: 500
+  autoClickIncrease: 50
   audioManager: {fileID: 1352680740}
   upgradeClipIndex: 3
   spritePrefab: {fileID: 5323036058367682073, guid: ab4f39be7515b94449341d7d5faae29b, type: 3}
@@ -6367,6 +6399,138 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1494912483}
   m_CullTransparentMesh: 1
+--- !u!1 &1501317753
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1501317754}
+  - component: {fileID: 1501317757}
+  - component: {fileID: 1501317756}
+  - component: {fileID: 1501317755}
+  m_Layer: 5
+  m_Name: Shuffle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1501317754
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1501317753}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 422564373}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -112.4, y: -95.9}
+  m_SizeDelta: {x: 38.3166, y: 34.8638}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1501317755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1501317753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1501317756}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1352680740}
+        m_TargetAssemblyTypeName: AudioManager, Assembly-CSharp
+        m_MethodName: PlayRandomBackgroundMusic
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1501317756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1501317753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 7849754195f99104ea518da4ed51d195, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1501317757
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1501317753}
+  m_CullTransparentMesh: 1
 --- !u!1 &1506890769
 GameObject:
   m_ObjectHideFlags: 0
@@ -7001,7 +7165,7 @@ MonoBehaviour:
   resourceTracker: {fileID: 1880980518}
   winTextPrefab: {fileID: 5418589011972995372, guid: 1b2bdb0bdfc8f5842a2b8da4c2d73306, type: 3}
   winTextAnimator: {fileID: 7422199012496231561, guid: 1b2bdb0bdfc8f5842a2b8da4c2d73306, type: 3}
-  transitionDelay: 6
+  transitionDelay: 1
   winAmount: 70000000
   endSceneIndex: 2
 --- !u!1 &1718314298
@@ -7294,13 +7458,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: Rosary Beads
   numberOwned: 0
-  baseCost: 10000
+  baseCost: 1000
   purchaseCost: 0
   costText: {fileID: 1370816305}
   nameText: {fileID: 1345742569}
   numberText: {fileID: 228865971}
   myResources: {fileID: 1880980518}
-  autoClickIncrease: 20
+  autoClickIncrease: 0.1
   audioManager: {fileID: 1352680740}
   upgradeClipIndex: 0
   spritePrefab: {fileID: 2163312064699136083, guid: dd0d4626656357e4cabf9b19e80e39e0, type: 3}
@@ -8189,13 +8353,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemName: God's Gift
   numberOwned: 0
-  baseCost: 2500000
+  baseCost: 25000000
   purchaseCost: 0
   costText: {fileID: 1513361555}
   nameText: {fileID: 1980230489}
   numberText: {fileID: 610363242}
   myResources: {fileID: 1880980518}
-  autoClickIncrease: 2500
+  autoClickIncrease: 500
   audioManager: {fileID: 1352680740}
   upgradeClipIndex: 4
   spritePrefab: {fileID: 1654340073148662544, guid: 0dc8694929b0d6743be454f0c53be47c, type: 3}
@@ -9366,6 +9530,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8300000, guid: 04f46bea0e3579b4d9c752b8081a1e09, type: 3}
     - target: {fileID: 2332132330636125085, guid: 18c22dac3ada74b41bac6d3bd4b2861b, type: 3}
+      propertyPath: backgroundMusicClips.Array.size
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 2332132330636125085, guid: 18c22dac3ada74b41bac6d3bd4b2861b, type: 3}
       propertyPath: collectableAppearClip.Array.size
       value: 3
       objectReference: {fileID: 0}
@@ -9409,6 +9577,34 @@ PrefabInstance:
       propertyPath: backgroundMusicClips.Array.data[5]
       value: 
       objectReference: {fileID: 8300000, guid: 58f75d04947cd394fac4d676cfd8606a, type: 3}
+    - target: {fileID: 2332132330636125085, guid: 18c22dac3ada74b41bac6d3bd4b2861b, type: 3}
+      propertyPath: backgroundMusicClips.Array.data[6]
+      value: 
+      objectReference: {fileID: 8300000, guid: 6c3ade5921b1aa540a147de877824ee8, type: 3}
+    - target: {fileID: 2332132330636125085, guid: 18c22dac3ada74b41bac6d3bd4b2861b, type: 3}
+      propertyPath: backgroundMusicClips.Array.data[7]
+      value: 
+      objectReference: {fileID: 8300000, guid: b7aac111dd447eb45bd58741e3de7a31, type: 3}
+    - target: {fileID: 2332132330636125085, guid: 18c22dac3ada74b41bac6d3bd4b2861b, type: 3}
+      propertyPath: backgroundMusicClips.Array.data[8]
+      value: 
+      objectReference: {fileID: 8300000, guid: 0d9745b5506a45a4997daeb1bf99eb3c, type: 3}
+    - target: {fileID: 2332132330636125085, guid: 18c22dac3ada74b41bac6d3bd4b2861b, type: 3}
+      propertyPath: backgroundMusicClips.Array.data[9]
+      value: 
+      objectReference: {fileID: 8300000, guid: be65d4b2d4d022344b8eb369f45a989a, type: 3}
+    - target: {fileID: 2332132330636125085, guid: 18c22dac3ada74b41bac6d3bd4b2861b, type: 3}
+      propertyPath: backgroundMusicClips.Array.data[10]
+      value: 
+      objectReference: {fileID: 8300000, guid: 62d45c94d1cc937419f95ff546cbf698, type: 3}
+    - target: {fileID: 2332132330636125085, guid: 18c22dac3ada74b41bac6d3bd4b2861b, type: 3}
+      propertyPath: backgroundMusicClips.Array.data[11]
+      value: 
+      objectReference: {fileID: 8300000, guid: 0c4e1047dfbe6a3448c6394c4c092938, type: 3}
+    - target: {fileID: 2332132330636125085, guid: 18c22dac3ada74b41bac6d3bd4b2861b, type: 3}
+      propertyPath: backgroundMusicClips.Array.data[12]
+      value: 
+      objectReference: {fileID: 8300000, guid: 36a8dac270f850b4d966e93cc2e23d0d, type: 3}
     - target: {fileID: 2332132330636125085, guid: 18c22dac3ada74b41bac6d3bd4b2861b, type: 3}
       propertyPath: collectableAppearClip.Array.data[0]
       value: 
@@ -9572,7 +9768,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1983142314441293630, guid: 5ea59ab2b96668b4ab4c60b8c95da2d4, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -7.0000916
+      value: -7.000122
       objectReference: {fileID: 0}
     - target: {fileID: 1983142314441293630, guid: 5ea59ab2b96668b4ab4c60b8c95da2d4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -9671,6 +9867,18 @@ PrefabInstance:
       propertyPath: multiplierDurationText
       value: 
       objectReference: {fileID: 7047241249601329905, guid: 86eb699e7bb37b5419081daf8f2a73cd, type: 3}
+    - target: {fileID: 3296611808956425475, guid: c72dd7565d77c534e8ce1b24f6a7ecbe, type: 3}
+      propertyPath: scalingFactorIncrement
+      value: 0.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 3296611808956425475, guid: c72dd7565d77c534e8ce1b24f6a7ecbe, type: 3}
+      propertyPath: scalingFactorIncrementInterval
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 3296611808956425475, guid: c72dd7565d77c534e8ce1b24f6a7ecbe, type: 3}
+      propertyPath: resourceCollectableScalingFactor
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5960093325231602662, guid: c72dd7565d77c534e8ce1b24f6a7ecbe, type: 3}
       propertyPath: m_LocalPosition.x
       value: 563.9335
@@ -9883,7 +10091,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2274879540665739331, guid: fc5ac8a338c3de943a8328804ac19817, type: 3}
       propertyPath: spawnRadius
-      value: 2.49
+      value: 1.85
       objectReference: {fileID: 0}
     - target: {fileID: 2274879540665739331, guid: fc5ac8a338c3de943a8328804ac19817, type: 3}
       propertyPath: initialDelay
@@ -9895,7 +10103,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2274879540665739331, guid: fc5ac8a338c3de943a8328804ac19817, type: 3}
       propertyPath: multiplierSpawnInterval
-      value: 60
+      value: 31
       objectReference: {fileID: 0}
     - target: {fileID: 2274879540665739331, guid: fc5ac8a338c3de943a8328804ac19817, type: 3}
       propertyPath: collectableSpawnInterval
@@ -9903,7 +10111,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2274879540665739331, guid: fc5ac8a338c3de943a8328804ac19817, type: 3}
       propertyPath: multiplierPrefabs.Array.size
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2274879540665739331, guid: fc5ac8a338c3de943a8328804ac19817, type: 3}
       propertyPath: cpsReductionCollectablePrefab
@@ -9930,8 +10138,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6990464468558480612, guid: e3c587ad47b94414c9ba10879dd4ed72, type: 3}
     - target: {fileID: 2274879540665739331, guid: fc5ac8a338c3de943a8328804ac19817, type: 3}
+      propertyPath: penaltyCollectableSpawnInterval
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 2274879540665739331, guid: fc5ac8a338c3de943a8328804ac19817, type: 3}
       propertyPath: resourceCollectableSpawnInterval
-      value: 10
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 2274879540665739331, guid: fc5ac8a338c3de943a8328804ac19817, type: 3}
+      propertyPath: cpsReductionCollectableSpawnInterval
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 2274879540665739331, guid: fc5ac8a338c3de943a8328804ac19817, type: 3}
       propertyPath: penaltyCollectablePrefabs.Array.size
@@ -9939,7 +10155,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2274879540665739331, guid: fc5ac8a338c3de943a8328804ac19817, type: 3}
       propertyPath: resourceCollectableMultiplierInterval
-      value: 17
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 2274879540665739331, guid: fc5ac8a338c3de943a8328804ac19817, type: 3}
       propertyPath: resourceCollectablePrefabs.Array.size
@@ -10024,3 +10240,4 @@ SceneRoots:
   - {fileID: 138193861}
   - {fileID: 1976966268}
   - {fileID: 438720276}
+  - {fileID: 993152655}

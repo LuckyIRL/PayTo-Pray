@@ -14,6 +14,11 @@ public class ResourceTracker : MonoBehaviour
     private float autoClickPool;
     public TMP_Text resourceCounter, clickCounter;
 
+    // Define a scaling factor for the resource collectable
+    public float resourceCollectableScalingFactor = 1.0f;
+    public float scalingFactorIncrement = 0.1f; // Increment value for scaling factor
+    public float scalingFactorIncrementInterval = 60.0f; // Interval to increase the scaling factor (e.g., every 60 seconds)
+
     // Variables for collectable
     private bool cpsReductionCollectableActive = false;
     private float cpsReductionCollectableTimer = 0f;
@@ -33,7 +38,7 @@ public class ResourceTracker : MonoBehaviour
     private float prayBoostTimer = 0f;
 
     // Penalty collectable variables
-    private float penaltyAmount = 0.5f; // Percentage by which resources will be penalized if not clicked
+    private float penaltyAmount = 0.2f; // Percentage by which resources will be penalized if not clicked
     private bool penaltyActive = false; // Flag to track if a penalty collectable is active
     private bool penaltyCollectableSpawned = false; // Flag to track if a penalty collectable has spawned but not clicked
     private bool penaltyClicked = false; // Flag to track if the penalty collectable has been clicked
@@ -156,6 +161,31 @@ public class ResourceTracker : MonoBehaviour
     }
 
 
+    // Method to increase the scaling factor
+    private void IncreaseScalingFactor()
+    {
+        resourceCollectableScalingFactor += scalingFactorIncrement;
+    }
+
+    // Method to add resources with dynamically scaled amount
+    public void AddResourcesWithScaling(int baseAmount)
+    {
+        // Calculate the scaled amount based on the current scaling factor
+        int scaledAmount = Mathf.RoundToInt(baseAmount * resourceCollectableScalingFactor);
+
+        // Add the scaled amount to the resources available
+        AddResources(scaledAmount);
+    }
+
+    // Method to activate the Resource collectable with a specified base amount
+    public void ActivateResourceCollectable(int baseAmount)
+    {
+        // Call AddResourcesWithScaling instead of AddResources
+        AddResourcesWithScaling(baseAmount);
+    }
+
+
+
 
     private void Update()
     {
@@ -203,6 +233,13 @@ public class ResourceTracker : MonoBehaviour
                 currentAutoClicks *= prayBoostMultiplier;
             }
         }
+
+        // Check if it's time to increase the scaling factor
+        if (Time.time % scalingFactorIncrementInterval == 0)
+        {
+            IncreaseScalingFactor();
+        }
+
 
         // Update the UI
         UpdateUI();

@@ -643,8 +643,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -20.7, y: 63.2}
-  m_SizeDelta: {x: 324.0752, y: 99.4164}
+  m_AnchoredPosition: {x: -87, y: 87}
+  m_SizeDelta: {x: 810.11, y: 289.51}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1658891659
 MonoBehaviour:
@@ -666,7 +666,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Well Done You Have Earned Your Halo
+  m_text: "Well Done \nA Prayer for Every Person on Earth\nYou Have Earned Your Halo"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -675,8 +675,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4290793281
-  m_fontColor: {r: 0.25326756, g: 0.30993202, b: 0.754717, a: 1}
+    rgba: 4278254591
+  m_fontColor: {r: 1, g: 0.9851922, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -729,7 +729,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -43.568497, y: 0, z: -39.607727, w: -50.112396}
+  m_margin: {x: -2.525589, y: 0, z: -2.8850708, w: -0.4288025}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

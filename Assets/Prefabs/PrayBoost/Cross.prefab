@@ -75,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 150
   m_Sprite: {fileID: 21300000, guid: 4de7e1fc0a1917546b477aba64f63868, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -167,8 +167,9 @@ MonoBehaviour:
   resourceAmount: 0
   collectableClipIndex: 6
   cpsReductionPercentage: 0
-  prayBoostMultiplier: 20
+  prayBoostMultiplier: 100
   prayBoostDuration: 10
   resourceMultiplierValue: 0
   multiplierDuration: 0
   multiplierValue: 0
+  playOnAppearance: 0
