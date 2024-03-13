@@ -1374,7 +1374,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.7421875, y: -5.7676697}
+  m_AnchoredPosition: {x: 0.7421875, y: -5.7677917}
   m_SizeDelta: {x: -33.2845, y: -28.6187}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &143588736
@@ -9342,6 +9342,10 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2332132330636125085, guid: 18c22dac3ada74b41bac6d3bd4b2861b, type: 3}
+      propertyPath: penaltyAppearClips.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2332132330636125085, guid: 18c22dac3ada74b41bac6d3bd4b2861b, type: 3}
       propertyPath: collectableClips.Array.data[5]
       value: 
       objectReference: {fileID: 8300000, guid: df0e684e838c5094d9a15a4f2ed67101, type: 3}
@@ -9365,6 +9369,18 @@ PrefabInstance:
       propertyPath: collectableAppearClip.Array.size
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 2332132330636125085, guid: 18c22dac3ada74b41bac6d3bd4b2861b, type: 3}
+      propertyPath: penaltyAppearClips.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 8c60371ab59cdea4ebaf2ba878ff3e2d, type: 3}
+    - target: {fileID: 2332132330636125085, guid: 18c22dac3ada74b41bac6d3bd4b2861b, type: 3}
+      propertyPath: penaltyAppearClips.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: c4f8df6e79531384daf7829e58bbe42f, type: 3}
+    - target: {fileID: 2332132330636125085, guid: 18c22dac3ada74b41bac6d3bd4b2861b, type: 3}
+      propertyPath: penaltyAppearClips.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 04f46bea0e3579b4d9c752b8081a1e09, type: 3}
     - target: {fileID: 2332132330636125085, guid: 18c22dac3ada74b41bac6d3bd4b2861b, type: 3}
       propertyPath: collectableAppearClips.Array.size
       value: 3
@@ -9508,7 +9524,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1983142314441293630, guid: 5ea59ab2b96668b4ab4c60b8c95da2d4, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1983142314441293630, guid: 5ea59ab2b96668b4ab4c60b8c95da2d4, type: 3}
       propertyPath: m_AnchorMin.y
@@ -9516,7 +9532,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1983142314441293630, guid: 5ea59ab2b96668b4ab4c60b8c95da2d4, type: 3}
       propertyPath: m_SizeDelta.x
-      value: -620.968
+      value: 150.9944
       objectReference: {fileID: 0}
     - target: {fileID: 1983142314441293630, guid: 5ea59ab2b96668b4ab4c60b8c95da2d4, type: 3}
       propertyPath: m_SizeDelta.y
@@ -9552,11 +9568,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1983142314441293630, guid: 5ea59ab2b96668b4ab4c60b8c95da2d4, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 17
+      value: -392.08765
       objectReference: {fileID: 0}
     - target: {fileID: 1983142314441293630, guid: 5ea59ab2b96668b4ab4c60b8c95da2d4, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -6.0002136
+      value: -7.0000916
       objectReference: {fileID: 0}
     - target: {fileID: 1983142314441293630, guid: 5ea59ab2b96668b4ab4c60b8c95da2d4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -9918,6 +9934,10 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2274879540665739331, guid: fc5ac8a338c3de943a8328804ac19817, type: 3}
+      propertyPath: penaltyCollectablePrefabs.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2274879540665739331, guid: fc5ac8a338c3de943a8328804ac19817, type: 3}
       propertyPath: resourceCollectableMultiplierInterval
       value: 17
       objectReference: {fileID: 0}
@@ -9925,6 +9945,10 @@ PrefabInstance:
       propertyPath: resourceCollectablePrefabs.Array.size
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 2274879540665739331, guid: fc5ac8a338c3de943a8328804ac19817, type: 3}
+      propertyPath: penaltyCollectablePrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 5165089470652210056, guid: 69ed6beee6067f245bf43aadc20a700c, type: 3}
     - target: {fileID: 2274879540665739331, guid: fc5ac8a338c3de943a8328804ac19817, type: 3}
       propertyPath: resourceCollectableMultiplier.Array.size
       value: 2
@@ -9969,6 +9993,10 @@ PrefabInstance:
       propertyPath: cpsReductionCollectablePrefabs.Array.data[0]
       value: 
       objectReference: {fileID: 5165089470652210056, guid: 18354f1d7efce9d45bce7ca928abae70, type: 3}
+    - target: {fileID: 2274879540665739331, guid: fc5ac8a338c3de943a8328804ac19817, type: 3}
+      propertyPath: cpsReductionCollectablePrefabs.Array.data[1]
+      value: 
+      objectReference: {fileID: 5165089470652210056, guid: 69ed6beee6067f245bf43aadc20a700c, type: 3}
     - target: {fileID: 5140781728426828870, guid: fc5ac8a338c3de943a8328804ac19817, type: 3}
       propertyPath: m_Name
       value: Collectable Spawner

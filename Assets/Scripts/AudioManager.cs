@@ -16,6 +16,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip[] collectableClips; // Array of Collectable Clips
     public AudioClip[] multiplierClips; // Array of Multiplier Clips
     public AudioClip[] collectableAppearClips;
+    public AudioClip[] penaltyAppearClips;
 
     // Add variables to store the previous audio states
     private bool musicWasPlayingBeforePause;
@@ -96,6 +97,8 @@ public class AudioManager : MonoBehaviour
         }
     }
 
+
+
     // Method to play a specific upgrade audio clip
     public void PlayUpgradeClip(int index)
     {
@@ -116,6 +119,21 @@ public class AudioManager : MonoBehaviour
         {
             int randomIndex = Random.Range(0, collectableAppearClips.Length);
             sfxSource.PlayOneShot(collectableAppearClips[randomIndex]);
+        }
+        else
+        {
+            Debug.LogWarning("No collectable appear clips assigned.");
+        }
+    }
+
+
+    public void PlayPenaltyAppearClip()
+    {
+        // Play a random clip from the penaltyAppearClip array
+        if (penaltyAppearClips.Length > 0)
+        {
+            int randomIndex = Random.Range(0, penaltyAppearClips.Length);
+            sfxSource.PlayOneShot(penaltyAppearClips[randomIndex]);
         }
         else
         {

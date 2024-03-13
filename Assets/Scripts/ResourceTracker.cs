@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using System.Collections;
 
 public class ResourceTracker : MonoBehaviour
 {
@@ -32,6 +33,7 @@ public class ResourceTracker : MonoBehaviour
     // Penalty collectable variables
     private float penaltyPercentage = 0.5f; // Percentage by which resources will be penalized if not clicked
     private bool penaltyActive = false; // Flag to track if a penalty collectable is active
+    private bool penaltyCollectableSpawned = false; // Flag to track if a penalty collectable has spawned but not clicked
     private float penaltyTimer = 0f; // Timer for active penalty collectable
     private float penaltyDuration = 5f; // Duration for which the penalty collectable remains active
 
@@ -104,11 +106,40 @@ public class ResourceTracker : MonoBehaviour
         prayBoostTimer = 0f;
     }
 
-    // Method to activate penalty collectable
     public void ActivatePenaltyCollectable()
     {
-        penaltyActive = true;
+        StartCoroutine(PenaltyCollectableRoutine());
+        penaltyCollectableSpawned = true; // Mark that a penalty collectable has spawned
     }
+
+
+
+    // Coroutine for penalty collectable behavior
+    private IEnumerator PenaltyCollectableRoutine()
+    {
+        
+        // Wait for the collectable to disappear if it's not clicked
+        yield return new WaitForSeconds(penaltyDuration);
+
+        // Check if the collectable is still active and not clicked
+        if (penaltyActive)
+        {
+            // Apply the penalty
+            ApplyResourcePenalty(penaltyPercentage);
+
+            // Deactivate penalty collectable
+            penaltyActive = false;
+            penaltyTimer = 0f;
+        }
+    }
+
+    // Method to apply the resource penalty
+    private void ApplyResourcePenalty(float penaltyPercentage)
+    {
+        int penaltyAmount = Mathf.RoundToInt(resourcesAvailable / penaltyPercentage);
+        resourcesAvailable -= penaltyAmount;
+    }
+
 
     private void Update()
     {
@@ -175,8 +206,7 @@ public class ResourceTracker : MonoBehaviour
             }
         }
 
-        // Check if penalty collectable is active
-        if (penaltyActive)
+        if (penaltyActive && penaltyCollectableSpawned)
         {
             penaltyTimer += Time.deltaTime;
 
@@ -188,16 +218,9 @@ public class ResourceTracker : MonoBehaviour
 
                 // Deactivate penalty collectable
                 penaltyActive = false;
+                penaltyCollectableSpawned = false; // Reset the flag
                 penaltyTimer = 0f;
             }
         }
     }
-
-    // Method to apply the resource penalty
-    private void ApplyResourcePenalty(float percentage)
-    {
-        int penaltyAmount = Mathf.RoundToInt(resourcesAvailable * percentage);
-        resourcesAvailable -= penaltyAmount;
-    }
 }
-
