@@ -102,7 +102,7 @@ MonoBehaviour:
   moveRange: 1
   rotationSpeed: 6.48
   rotationRange: 6.36
-  scaleFactor: 2
+  scaleFactor: 2.26
 --- !u!50 &5259659083782684357
 Rigidbody2D:
   serializedVersion: 4

@@ -140,7 +140,7 @@ MonoBehaviour:
   moveRange: 1
   rotationSpeed: 10
   rotationRange: 20
-  scaleFactor: 1.45
+  scaleFactor: 1.06
 --- !u!114 &-984144323200245580
 MonoBehaviour:
   m_ObjectHideFlags: 0

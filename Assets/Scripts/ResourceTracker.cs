@@ -9,7 +9,7 @@ public class ResourceTracker : MonoBehaviour
     // Singleton pattern
     public static ResourceTracker Instance { get; private set; }
 
-    public int resourcesAvailable;
+    public long resourcesAvailable;
     public float autoClicks;
     private float autoClickPool;
     public TMP_Text resourceCounter, clickCounter;

@@ -1,82 +1,54 @@
+// GameManager.cs
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using TMPro;
-using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    private static GameManager instance;
+    public static GameManager Instance { get { return instance; } }
+
+    public ScoreboardManager scoreboardManager;
     public ResourceTracker resourceTracker;
-    public GameObject winTextPrefab;
-    public Animator winTextAnimator; // Reference to the WinText animator
-    public float transitionDelay = 3f; // Delay before transitioning to the end screen
-    public int winAmount = 100; // Win condition amount
-    public int endSceneIndex; // Index of the end scene
+    public float transitionDelay = 3f;
+    public long winAmount = 7888000000L;
+    public int endSceneIndex;
 
     private bool gameWon = false;
 
-
-    void Update()
+    private void Start()
     {
+        instance = this; // Initialize the instance reference
+    }
+
+    private void Update()
+    {
+        // Check if the game is not yet won and the win condition is met
         if (!gameWon && resourceTracker.resourcesAvailable >= winAmount)
         {
+            // Calculate the elapsed ti
+
+            // Call the method to handle winning the game
             WinGame();
         }
-
-
     }
 
-    void WinGame()
+    private void WinGame()
     {
-        gameWon = true;
+        gameWon = true; // Set the game state to won
 
+        Time.timeScale = 0f; // Pause the gameplay
 
-        // Pause gameplay
-        Time.timeScale = 0f;
-
-        // Display win text and play animation
-        DisplayWinText();
+        // Start the coroutine to transition to the end scene after the delay
+        StartCoroutine(TransitionToEndScene());
     }
 
 
 
-    void DisplayWinText()
+    private IEnumerator TransitionToEndScene()
     {
-        // Find the Canvas object in the scene
-        Canvas canvas = FindObjectOfType<Canvas>();
-        if (canvas != null)
-        {
-            // Instantiate the win text prefab as a child of the Canvas
-            GameObject winTextInstance = Instantiate(winTextPrefab, canvas.transform);
-            // Get the TMP_Text component of the instantiated win text prefab
-            TMP_Text winText = winTextInstance.GetComponent<TMP_Text>();
-            if (winText != null)
-            {
-                // Set the win text content
-                winText.text = "You Win!";
-                // Set the position of the win text (e.g., center of the screen)
-                winText.rectTransform.anchoredPosition = Vector2.zero;
-                // Start coroutine to make the text disappear and transition to end screen
-                StartCoroutine(HideWinTextAndTransition(winTextInstance));
-            }
-            else
-            {
-                Debug.LogError("TMP_Text component not found in the win text prefab.");
-            }
-        }
-        else
-        {
-            Debug.LogError("Canvas not found in the scene. Cannot display win text.");
-        }
-    }
-
-    IEnumerator HideWinTextAndTransition(GameObject winTextInstance)
-    {
-        // Wait for a few seconds
+        // Wait for the specified delay
         yield return new WaitForSecondsRealtime(transitionDelay);
-
-        // Destroy the win text object
-        Destroy(winTextInstance);
 
         // Load the end scene
         SceneManager.LoadScene(endSceneIndex);

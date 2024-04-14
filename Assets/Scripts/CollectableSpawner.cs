@@ -77,6 +77,10 @@ public class CollectableSpawner : MonoBehaviour
 
         // Set random color for the    // Start coroutine to make multiplier disappear after a delay
         StartCoroutine(DisappearAfterDelay(multiplierInstance));
+
+        // Set random color for the multiplier
+        SetRandomColor(multiplierInstance);
+
     }
 
 

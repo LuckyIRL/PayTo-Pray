@@ -129,4 +129,4 @@ MonoBehaviour:
   moveRange: 1
   rotationSpeed: 11.68
   rotationRange: 30
-  scaleFactor: 2
+  scaleFactor: 3
